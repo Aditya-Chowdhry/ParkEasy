@@ -24,8 +24,8 @@ Rails.application.configure do
                     :port           => 587,
                     :authentication => :plain,
                     :user_name      => "adityachowdhry09@gmail.com",
-                    :password       => "abc"
-}
+                    :password       => "********"
+                  }
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 

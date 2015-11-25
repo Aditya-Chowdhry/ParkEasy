@@ -255,6 +255,9 @@ return infowindow;
 </div>
 <%else%>
 <% provide(:title, "Home") %>
+<% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>"><%= message %></div>
+<% end %>
 <div class="center jumbotron">
 <h1>Welcome to ParkEasy</h1>
 <i class="fa fa-car fa-5x"></i>
@@ -289,7 +292,7 @@ return infowindow;
     <div class="col-lg-3">
       <center>
         <i class="fa fa-shopping-bag fa-3x"></i>
-      <h4>Get discounts, offers and many more</h4>
+      <h4>Get discounts, offers<br>and<br>many more</h4>
     </center>
     </div><!--/col-lg-4 -->
   </div><!-- /row -->
