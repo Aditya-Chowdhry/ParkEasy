@@ -175,10 +175,9 @@ var end = {lat: 28.6100, lng: 77.2300};
 
 
 /*
-findShortestDistance(){
-  var origin = new google.maps.LatLng(55.930385, -3.118425),
-    destination = "Stockholm, Sweden",
-    service = new google.maps.DistanceMatrixService();
+findShortestDistance(origin,destination){
+
+  var service = new google.maps.DistanceMatrixService();
 
 service.getDistanceMatrix(
     {
@@ -192,9 +191,7 @@ service.getDistanceMatrix(
 );
 
 function callback(response, status) {
-    var orig = document.getElementById("orig"),
-        dest = document.getElementById("dest"),
-        dist = document.getElementById("dist");
+    var orig,dest,dist;
 
     if(status=="OK") {
         orig.value = response.destinationAddresses[0];
@@ -206,7 +203,6 @@ function callback(response, status) {
 }
 }
 */
-
 
 
 function setMarkers(map,data){
