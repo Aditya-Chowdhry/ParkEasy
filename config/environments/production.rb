@@ -59,15 +59,15 @@ Rails.application.configure do
   config.action_mailer.default_options = {from: 'no-reply@parkeasy.co.in'}
   config.action_mailer.default_url_options = { :host => 'vast-wave-6400.herokuapp.com' }
   ActionMailer::Base.smtp_settings = {
-  :user_name => ENV['USER_NAME'],
-  :password => ENV['MAIL_PASSWORD'],
-  :domain => 'examopedia.co.in',
-  :address => 'smtp.sendgrid.net',
-  :port => 587,
-  :authentication => :plain,
-  :domain         => 'heroku.com',
-  :enable_starttls_auto => true
-  }
+    :user_name => ENV['USER_NAME'],
+    :password => ENV['MAIL_PASSWORD'],
+    :domain => 'examopedia.co.in',
+    :address => 'smtp.sendgrid.net',
+    :port => 587,
+    :authentication => :plain,
+    :domain         => 'heroku.com',
+    :enable_starttls_auto => true
+}
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = 'http://assets.example.com'
 
