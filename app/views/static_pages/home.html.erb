@@ -72,7 +72,29 @@ var i=0;
 
 }
 
+function findPath(start,end,map){
+ var directionsDisplay = new google.maps.DirectionsRenderer;
+ var directionsService = new google.maps.DirectionsService;
+ directionsDisplay.setMap(map);
+ directionsDisplay.setPanel(document.getElementById('right-panel'));
+   calculateAndDisplayRoute(directionsService, directionsDisplay,start,end);
+}
 
+function calculateAndDisplayRoute(directionsService, directionsDisplay,startLoc,endLoc) {
+ var start = startLoc;
+ var end = endLoc;
+ directionsService.route({
+   origin: start,
+   destination: end,
+   travelMode: google.maps.TravelMode.DRIVING
+ }, function(response, status) {
+   if (status === google.maps.DirectionsStatus.OK) {
+     directionsDisplay.setDirections(response);
+   } else {
+     window.alert('Directions request failed due to ' + status);
+   }
+ });
+}
 
 
 function CenterControl(controlDiv, map,DelhiCenter) {
@@ -152,7 +174,7 @@ var end = {lat: 28.6100, lng: 77.2300};
 
 
 
-
+/*
 findShortestDistance(){
   var origin = new google.maps.LatLng(55.930385, -3.118425),
     destination = "Stockholm, Sweden",
@@ -183,7 +205,7 @@ function callback(response, status) {
     }
 }
 }
-
+*/
 
 
 
